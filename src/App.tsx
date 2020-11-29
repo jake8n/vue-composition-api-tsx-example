@@ -1,11 +1,11 @@
-import Vue, { CreateElement } from 'vue';
+import { CreateElement } from 'vue';
 import { defineComponent } from '@vue/composition-api';
 import HelloWorld from './components/HelloWorld'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  created () {
+    console.log('hello from app')
   },
   methods: {
     handleClick() {
@@ -15,7 +15,8 @@ export default defineComponent({
   render (h: CreateElement) {
     return (
       <div>
-        <HelloWorld message="jake" click={this.handleClick} />
+        <h1>Welcome</h1>
+        <HelloWorld message="hello" click={this.handleClick} />
       </div>
     )
   }

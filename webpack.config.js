@@ -1,36 +1,27 @@
-const { ESBuildPlugin } = require('esbuild-loader')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  devtool: 'inline-source-map',
   entry: "./src/main.ts",
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
+        exclude: /node_modules/,
         use: [
-          // {
-          //   test: /\.tsx?$/,
-          //   exclude: /node_modules/,
-          //   loader: "babel-loader",
-          // },
-          // {
-          //   loader: "ts-loader",
-          //   options: {
-          //     transpileOnly: true,
-          //   },
-          // },
+          'babel-loader',
           {
-            loader: "esbuild-loader",
+            loader: "ts-loader",
             options: {
-              loader: 'tsx',
-              tsconfigRaw: require('./tsconfig.json')
-            }
-          }
+              transpileOnly: true,
+            },
+          },
         ],
       },
     ],
   },
-  plugins: [new ESBuildPlugin(), new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin()],
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },

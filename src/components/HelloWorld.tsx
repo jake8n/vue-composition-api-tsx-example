@@ -12,11 +12,7 @@ export default defineComponent({
       type: Function as PropType<() => void>
     }
   },
-  created () {
-    console.log(this)
-  },
-  render (h: CreateElement, props: any) {
-    console.log(this)
-    return <h1 onClick={props.click}>jake {props.message}</h1>
+  render (h: CreateElement) {
+    return <h1 onClick={this.click}>jake {this.message}</h1>
   }
 });
