@@ -1,29 +1,3 @@
-# vue-composition-api-tsx-example
+# Scratch
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* Functional component props do not get first class type safety (tracked by issue [#137](https://github.com/vuejs/jsx/issues/137)). A saving grace is that performances are neglible in function over stateful components; the only real difference is syntax.

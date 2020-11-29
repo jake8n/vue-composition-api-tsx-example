@@ -7,4 +7,4 @@ Vue.use(VueCompositionApi);
 
 new Vue({
   render: h => h(App),
-}).$mount('#app');
+}).$mount('body');
